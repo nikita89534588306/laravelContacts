@@ -1,7 +1,9 @@
 @extends('templates.main')
 
 @section('content')
-<table class="table table-secondary table-striped mt-5 text-center">
+<div class="mt-5">
+  <a href="{{route('create_contact')}}" class="btn btn-success mb-2">Создать контакт</a>
+  <table class="table table-secondary table-striped  text-center">
     <thead class="table-dark ">
       <tr>
         <th scope="col">Имя</th>
@@ -21,4 +23,5 @@
 
     </tbody>
   </table>
+</div>
 @endsection

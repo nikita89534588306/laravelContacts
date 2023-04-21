@@ -14,3 +14,5 @@ use App\Http\Controllers\MyContactsController;
 */
 
 Route::get('/',[MyContactsController::class,'index'])->name('all_contacts');
+Route::get('/create_contact',[MyContactsController::class,'create'])->name('create_contact');
+Route::post('/store_contact',[MyContactsController::class,'store'])->name('store_contact');

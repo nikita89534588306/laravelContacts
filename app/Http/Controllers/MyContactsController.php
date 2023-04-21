@@ -16,4 +16,19 @@ class MyContactsController extends Controller
 
         return view('contacts.index')->with(['dataAllUsers' => $dataAllUsers]);
     }
+    public function create(){ return view('contacts.create');}
+
+    public function store(Request $req){ 
+        $dataUser = DB::table('people')->insert([
+            'name' => $req->name,
+            'surname' => $req->surname
+        ]);
+        $idUser = DB::getPdo()->lastInsertId();
+
+        DB::table('phones')->insert([
+            "number" => $req->phone_number,
+            "person_id" => $idUser
+        ]);
+        return redirect()->route('all_contacts');
+    }
 }
