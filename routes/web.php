@@ -13,6 +13,7 @@ use App\Http\Controllers\MyContactsController;
 |
 */
 
-Route::get('/',[MyContactsController::class,'index'])->name('all_contacts');
-Route::get('/create_contact',[MyContactsController::class,'create'])->name('create_contact');
-Route::post('/store_contact',[MyContactsController::class,'store'])->name('store_contact');
+Route::get('/contact',[MyContactsController::class,'index'])->name('all_contacts');
+Route::get('/contact/create',[MyContactsController::class,'create'])->name('create_contact');
+Route::post('/contact/store',[MyContactsController::class,'store'])->name('store_contact');
+Route::get('/contact/{id}',[MyContactsController::class,'show'])->name('show_contact');
